@@ -6,7 +6,6 @@ const Cors = require("@koa/cors");
 const Helmet = require("koa-helmet");
 const respond = require("koa-respond");
 const compress = require("koa-compress");
-const serve = require("koa-static");
 
 const app = new Koa();
 const router = new Router();
@@ -22,7 +21,6 @@ app.use(compress());
 // app.use(bodyParser());
 
 app.use(respond());
-app.use(serve("./public"));
 
 // API routes
 require("./routes")(router);
